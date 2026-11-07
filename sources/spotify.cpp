@@ -21,8 +21,8 @@
 //comment!!
 
 int main(int argc, char **argv) {
-    screens screens = setup(true, false, true);
-    C2D_TargetClear(screens.bottom, C2D_Color32(0, 255, 0, 255));
+    screens screens = setup(true, false);
+    C2D_TargetClear(screens.top, C2D_Color32(0, 255, 0, 255));
 
     socBuffer = (u32*)memalign(SOC_ALIGN, SOC_BUFFERSIZE);
     if (socBuffer == NULL || R_FAILED(socInit(socBuffer, SOC_BUFFERSIZE))) {
@@ -92,6 +92,7 @@ int main(int argc, char **argv) {
     printf("-----------------------------------\n\n");
 
     while (aptMainLoop()) {
+
         hidScanInput();
         u32 kDown = hidKeysDown();
 
@@ -180,9 +181,8 @@ int main(int argc, char **argv) {
         gfxFlushBuffers();
         gfxSwapBuffers();
         gspWaitForVBlank();
-        fin_loop();
     };
-
+    fin_loop();
     if (playing) ov_clear(&vf);
 
     linearFree(pcm_buffers[0]);

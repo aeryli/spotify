@@ -129,8 +129,7 @@ spotify.o: C:/Users/alixc/3ds/spotify/sources/spotify.cpp \
  C:/devkitPro/portlibs/3ds/include/tremor/ivorbiscodec.h \
  C:/devkitPro/portlibs/3ds/include/ogg/ogg.h \
  C:/devkitPro/portlibs/3ds/include/ogg/os_types.h \
- C:/devkitPro/portlibs/3ds/include/ogg/config_types.h \
- C:/Users/alixc/3ds/spotify/sources/headers/librespot_3ds.h
+ C:/devkitPro/portlibs/3ds/include/ogg/config_types.h
 C:/devkitPro/libctru/include/3ds.h:
 C:/devkitPro/libctru/include/3ds/types.h:
 C:/devkitPro/libctru/include/3ds/result.h:
@@ -262,4 +261,3 @@ C:/devkitPro/portlibs/3ds/include/tremor/ivorbiscodec.h:
 C:/devkitPro/portlibs/3ds/include/ogg/ogg.h:
 C:/devkitPro/portlibs/3ds/include/ogg/os_types.h:
 C:/devkitPro/portlibs/3ds/include/ogg/config_types.h:
-C:/Users/alixc/3ds/spotify/sources/headers/librespot_3ds.h:

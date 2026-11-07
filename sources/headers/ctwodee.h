@@ -9,12 +9,9 @@
 // };
 //made py me
 struct screens {C3D_RenderTarget* top; C3D_RenderTarget* bottom;};
-screens setup(bool consoler, bool topp, bool bottomm) {
+screens setup(bool topp, bool bottomm) {
     gfxInitDefault();
-    gfxSet3D(false);
-    if (consoler) {
-        consoleInit(GFX_BOTTOM, NULL);
-    };
+    //gfxSet3D(false);
     C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
     C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
     C2D_Prepare();
@@ -25,8 +22,7 @@ screens setup(bool consoler, bool topp, bool bottomm) {
         consoleInit(GFX_TOP, NULL);
     };
     if (bottomm) {
-        outp.bottom =
-            C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
+        outp.bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
     } else {
         consoleInit(GFX_BOTTOM, NULL);
     };
@@ -39,5 +35,4 @@ void fin_frame() {
 void fin_loop() {
     C2D_Fini();
     C3D_Fini();
-    gfxExit();
 };
