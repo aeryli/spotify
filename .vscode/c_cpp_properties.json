@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "devkitARM-3DS",
+            "includePath": [ 
+                "${workspaceFolder}/**",
+                "C:/devkitPro/libctru/include",
+                "C:/devkitPro/devkitARM/arm-none-eabi/include",
+                "C:/devkitPro/devkitARM/include",
+                "C:/newinclude"
+            ],
+            "defines": [
+                "__3DS__",
+                "ARM11"
+            ],
+            "compilerPath": "C:/devkitPro/devkitARM/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-arm"
+        }
+    ],
+    "version": 4
+}
