@@ -7,7 +7,7 @@
                 "C:/devkitPro/libctru/include",
                 "C:/devkitPro/devkitARM/arm-none-eabi/include",
                 "C:/devkitPro/devkitARM/include",
-                "C:/newinclude"
+                "./include"
             ],
             "defines": [
                 "__3DS__",

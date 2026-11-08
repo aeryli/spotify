@@ -11,7 +11,7 @@
 #include "headers/json.h"
 #include "headers/https.h"
 #include "headers/ctwodee.h"
-#include <tremor/ivorbisfile.h>
+#include "tremor/ivorbisfile.h"
 
 #define SOC_ALIGN       0x1000
 #define SOC_BUFFERSIZE  0x100000
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
     int buf_idx = 0;
 
     printf("===================================\n");
-    printf("        3ds Spotify!!              \n");
+    printf("            3ds Spotify!!          \n");
     printf("===================================\n");
     printf("Controls:\n");
     printf("  [A] Set Server IP\n");
