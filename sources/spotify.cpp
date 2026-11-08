@@ -10,7 +10,7 @@
 #include <citro2d.h>
 #include "headers/json.h"
 #include "headers/https.h"
-#include "headers/ctwodee.h"
+#include "headers/CtwoD.h"
 #include "tremor/ivorbisfile.h"
 
 #define SOC_ALIGN       0x1000
