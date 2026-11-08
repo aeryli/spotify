@@ -16,6 +16,7 @@
 static u32 *socBuffer = NULL;
 static int sock_fd = -1;
 
+//no idea
 size_t net_read(void *ptr, size_t size, size_t nmemb, void *datasource) {
     int fd = *(int*)datasource;
     ssize_t res = recv(fd, ptr, size * nmemb, 0);
@@ -23,12 +24,14 @@ size_t net_read(void *ptr, size_t size, size_t nmemb, void *datasource) {
     return res / size;
 }
 
+//pretty sure this closes a connection, not sure
 int net_close(void *datasource) {
     int fd = *(int*)datasource;
     if (fd >= 0) close(fd);
     return 0;
 }
 
+//searches for songs via python backend
 int search_http(char* searchids, size_t id_sizes, const char* ip, int port, const char* search_id) {
     struct sockaddr_in serv_addr;
     sock_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -77,6 +80,7 @@ int search_http(char* searchids, size_t id_sizes, const char* ip, int port, cons
     return (offset-searchids);
 }
 
+//i think it gets a track
 int connect_http(const char* ip, int port, const char* track_id) {
     struct sockaddr_in serv_addr;
     sock_fd = socket(AF_INET, SOCK_STREAM, 0);
