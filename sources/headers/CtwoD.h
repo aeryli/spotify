@@ -24,17 +24,17 @@ screens setup(bool topp, bool bottomm) {
     };
     return outp;
 }
-//begit C3D (?) frame
+//begin `C3D` (?) frame
 void begin_frame(C3D_RenderTarget *screenIn, u32 color) {
     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
     C2D_TargetClear(screenIn, color);
     C2D_SceneBegin(screenIn);
 }
-//finish C3D (?) frame
+//finish `C3D` (?) frame
 void fin_frame() {
     C3D_FrameEnd(0);
 }
-//exit code for C2D/C3D
+//exit code for `C2D`/`C3D`
 void fin_loop() {
     C2D_Fini();
     C3D_Fini();

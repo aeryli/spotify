@@ -109,6 +109,7 @@ int main(int argc, char **argv) {
             150, 150,
             C2D_Color32(115, 115, 115, 255)
         );
+        //C2D_DrawImageAt();
 
         if (kDown & KEY_START) {
             free(search_ids); 
