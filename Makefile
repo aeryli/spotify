@@ -31,7 +31,7 @@ CXXFLAGS    := $(CFLAGS) -fno-rtti -fno-exceptions
 
 # Included Libraries & Specs
 SPECS       := -specs=3dsx.specs
-LIBS        := -lcurl -lmbedtls -lmbedcrypto -lz -lcitro2d -lcitro3d -lvorbisidec -logg -lctru -lm
+LIBS        := -lcitro2d -lcitro3d -lvorbisidec -logg -lctru -lm
 LIBDIRS     := $(CTRULIB) $(PORTLIBS)
 
 ifneq ($(BUILD),$(notdir $(CURDIR)))

@@ -11868,10 +11868,6 @@ LOAD C:/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/16.1.0/../../../../arm-
 LOAD C:/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/16.1.0/armv6k/fpu/crti.o
 LOAD C:/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/16.1.0/armv6k/fpu/crtbegin.o
 LOAD spotify.o
-LOAD C:/devkitPro/portlibs/3ds/lib\libcurl.a
-LOAD C:/devkitPro/portlibs/3ds/lib\libmbedtls.a
-LOAD C:/devkitPro/portlibs/3ds/lib\libmbedcrypto.a
-LOAD C:/devkitPro/portlibs/3ds/lib\libz.a
 LOAD C:/devkitPro/libctru/lib\libcitro2d.a
 LOAD C:/devkitPro/libctru/lib\libcitro3d.a
 LOAD C:/devkitPro/portlibs/3ds/lib\libvorbisidec.a
