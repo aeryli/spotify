@@ -2,8 +2,9 @@
 #include <cstddef>
 #include <stdio.h>
 #include <citro2d.h>
-//'screens' is just {C3D_RenderTarget* top; C3D_RenderTarget* bottom;}
+//holds screens' render targets
 struct screens {C3D_RenderTarget* top; C3D_RenderTarget* bottom;};
+//initialize screens, save space.
 screens setup(bool topp, bool bottomm) {
     gfxInitDefault();
     //gfxSet3D(false);
@@ -23,10 +24,11 @@ screens setup(bool topp, bool bottomm) {
     };
     return outp;
 };
+//finish C3D (?) frame
 void fin_frame() {
     C3D_FrameEnd(0);
 };
-
+//exit code for C2D/C3D
 void fin_loop() {
     C2D_Fini();
     C3D_Fini();
