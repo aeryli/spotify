@@ -2,12 +2,7 @@
 #include <cstddef>
 #include <stdio.h>
 #include <citro2d.h>
-// void frame(C3D_RenderTarget *screen, u32 colorval) {
-//     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
-//     C2D_TargetClear(screen, colorval);
-//     C2D_SceneBegin(screen);
-// };
-//made py me
+//'screens' is just {C3D_RenderTarget* top; C3D_RenderTarget* bottom;}
 struct screens {C3D_RenderTarget* top; C3D_RenderTarget* bottom;};
 screens setup(bool topp, bool bottomm) {
     gfxInitDefault();
