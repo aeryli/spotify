@@ -20,6 +20,13 @@
 
 //comment!!
 
+void get_user_input(const char* hint, char* out_buf, size_t max_len) {
+    SwkbdState swkbd;
+    swkbdInit(&swkbd, SWKBD_TYPE_NORMAL, 2, -1);
+    swkbdSetHintText(&swkbd, hint);
+    swkbdInputText(&swkbd, out_buf, max_len);
+}
+
 int main(int argc, char **argv) {
     screens screens = setup(true, false);
     C2D_TargetClear(screens.top, C2D_Color32(0, 255, 0, 255));

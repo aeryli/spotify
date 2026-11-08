@@ -115,10 +115,3 @@ int connect_http(const char* ip, int port, const char* track_id) {
 
     return sock_fd;
 }
-
-void get_user_input(const char* hint, char* out_buf, size_t max_len) {
-    SwkbdState swkbd;
-    swkbdInit(&swkbd, SWKBD_TYPE_NORMAL, 2, -1);
-    swkbdSetHintText(&swkbd, hint);
-    swkbdInputText(&swkbd, out_buf, max_len);
-}
