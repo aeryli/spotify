@@ -29,7 +29,6 @@ void get_user_input(const char* hint, char* out_buf, size_t max_len) {
 
 int main(int argc, char **argv) {
     screens screens = setup(true, false);
-    C2D_TargetClear(screens.top, C2D_Color32(0, 255, 0, 255));
 
     socBuffer = (u32*)memalign(SOC_ALIGN, SOC_BUFFERSIZE);
     if (socBuffer == NULL || R_FAILED(socInit(socBuffer, SOC_BUFFERSIZE))) {
@@ -102,6 +101,14 @@ int main(int argc, char **argv) {
 
         hidScanInput();
         u32 kDown = hidKeysDown();
+
+        begin_frame(screens.top, C2D_Color32(88, 88, 88, 255));
+
+        C2D_DrawRectSolid(
+            25, 45, 0,
+            150, 150,
+            C2D_Color32(115, 115, 115, 255)
+        );
 
         if (kDown & KEY_START) {
             free(search_ids); 
@@ -185,9 +192,6 @@ int main(int argc, char **argv) {
             }
         };
         fin_frame();
-        gfxFlushBuffers();
-        gfxSwapBuffers();
-        gspWaitForVBlank();
     };
     fin_loop();
     if (playing) ov_clear(&vf);
