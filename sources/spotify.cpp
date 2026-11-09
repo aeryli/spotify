@@ -98,18 +98,42 @@ int main(int argc, char **argv) {
     printf("-----------------------------------\n\n");
 
     while (aptMainLoop()) {
-
         hidScanInput();
         u32 kDown = hidKeysDown();
 
         begin_frame(screens.top, C2D_Color32(88, 88, 88, 255));
 
         C2D_DrawRectSolid(
-            25, 45, 0,
-            150, 150,
+            15, 30, 0,
+            139, 139,
             C2D_Color32(115, 115, 115, 255)
         );
-        //C2D_DrawImageAt();
+        C2D_DrawRectSolid(
+            169, 86, 0,
+            83, 83,
+            C2D_Color32(115, 115, 115, 255)
+        );
+        C2D_DrawRectSolid(
+            267, 86, 0,
+            83, 83,
+            C2D_Color32(115, 115, 115, 255)
+        );
+        C2D_DrawRectSolid(
+            365, 86, 0,
+            83, 83,
+            C2D_Color32(115, 115, 115, 255)
+        );
+        // Define the static text container
+        C2D_TextBuf textBuffer = C2D_TextBufNew(1024);
+        C2D_Text textObject;
+        C2D_TextParse(&textObject, textBuffer, "Example song title");
+        C2D_DrawText(
+            &textObject,
+            C2D_WithColor,
+            15, 184, 0,
+            1, 1,
+            C2D_Color32(191, 191, 191, 255)
+        );
 
         if (kDown & KEY_START) {
             free(search_ids); 
