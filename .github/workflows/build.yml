@@ -1,0 +1,43 @@
+name: Build 3DS Homebrew
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Use devkitPro's official devkitarm container image
+    container: devkitpro/devkitarm:latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install 3DS dependencies
+        run: |
+          # Use devkitPro's package manager to install the 3DS development environment
+          sudo dkp-pacman -Syu --noconfirm 3ds-dev
+
+      - name: Build project
+        run: |
+          # The container automatically sets up DEVKITPRO and DEVKITARM paths
+          make
+          
+      - name: Upload Build Artifacts
+        uses: actions/artifacts/upload-artifact@v4
+        with:
+          name: 3ds-build
+          path: |
+            *.3dsx
+            *.cia
