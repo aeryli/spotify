@@ -103,6 +103,7 @@ int main(int argc, char **argv) {
 
         begin_frame(screens.top, C2D_Color32(88, 88, 88, 255));
 
+        //squares
         C2D_DrawRectSolid(
             15, 30, 0,
             139, 139,
@@ -123,17 +124,40 @@ int main(int argc, char **argv) {
             83, 83,
             C2D_Color32(115, 115, 115, 255)
         );
-        // Define the static text container
-        C2D_TextBuf textBuffer = C2D_TextBufNew(1024);
-        C2D_Text textObject;
-        C2D_TextParse(&textObject, textBuffer, "Example song title");
+        //end squares
+
+        //defs
+        C2D_TextBuf title  = C2D_TextBufNew(1024);
+        C2D_TextBuf artist = C2D_TextBufNew(1024);
+        C2D_Text titleObject;
+        C2D_Text artistObject;
+        C2D_TextParse(&titleObject, title, "Example song title");
+        C2D_TextParse(&artistObject, artist, "Example artist name");
+        //end defs
+
+        //texts
         C2D_DrawText(
-            &textObject,
+            &titleObject,
             C2D_WithColor,
             15, 184, 0,
             1, 1,
             C2D_Color32(191, 191, 191, 255)
         );
+        C2D_DrawText(
+            &titleObject,
+            C2D_WithColor,
+            15, 184, 0,
+            1, 1,
+            C2D_Color32(191, 191, 191, 255)
+        );
+        C2D_DrawText(
+            &artistObject,
+            C2D_WithColor,
+            16.5, 210, 0,
+            0.5, 0.5,
+            C2D_Color32(191, 191, 191, 255)
+        );
+        //end texts
 
         if (kDown & KEY_START) {
             free(search_ids); 
